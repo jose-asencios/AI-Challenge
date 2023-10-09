@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura a la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+h1, p, button {
+    text-align: center;
+}
+
+.buttons_index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    margin: 40px; /* Espaciado superior para los botones */
+    padding: 10px;
+}
+
+#enviar {
+    padding: 10px;
+}
+
+#form-enviar input{
+    margin: 10px 0;
+}
+
+
+.reconocimiento {
+    width: 60%;
+    height: auto;
+    margin: auto;
+}

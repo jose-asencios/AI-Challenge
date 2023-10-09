@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Asencios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bienvenido al Challenge Arkangel IA</h1>
+        <p>A continuación, encontrará dos botones. El primer botón <span>Reconocimiento</span> es la interacción en vivo
+            con
+            el modelo desarrollado. Si es la primera vez que usa el programa, le agradecemos que nos apoye registrando
+            su
+            nombre y una foto suya en <span>Registro</span> para que el modelo pueda reconocerlo.</p>
+        <p>Gracias y bienvenido a mi solución</p>
+        <div class="buttons_index">
+            <button onclick="window.location.href='/recognition'">Reconocimiento</button>
+            <button onclick="window.location.href='/register'">Registro</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

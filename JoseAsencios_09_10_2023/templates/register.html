@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Registro</title>
+    <script>
+        function mostrarVistaPrevia() {
+            var inputImagen = document.getElementById('imagen');
+            var vistaPrevia = document.getElementById('vista-previa');
+            
+            var archivos = inputImagen.files;
+
+            if (archivos.length > 0) {
+                var lector = new FileReader();
+
+                lector.onload = function (e) {
+                    vistaPrevia.src = e.target.result;
+                    vistaPrevia.style.display = 'block';  // Mostrar la vista previa
+                };
+
+                lector.readAsDataURL(archivos[0]);
+            }
+        }
+
+        function validarFormulario() {
+            var nombre = document.getElementById("nombre").value;
+            var imagen = document.getElementById("imagen").value;
+
+            if (nombre === "" || imagen === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        <form action="/registrar" method="post" enctype="multipart/form-data" onsubmit="return validarFormulario()" id="form-enviar">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+            <label for="imagen">Seleccionar Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept=".jpg, .jpeg, .png" onchange="mostrarVistaPrevia()" required>
+            <br>
+            <img id="vista-previa" src="#" alt="Vista previa de la imagen" style="max-width: 100%; max-height: 200px; margin-top: 10px; display: none;">
+            <br>
+            <input type="submit" value="Registrar" id="enviar">
+            <button onclick="window.location.href='/'">Cancelar</button>
+        </form>
+    </div>
+</body>
+
+</html>
